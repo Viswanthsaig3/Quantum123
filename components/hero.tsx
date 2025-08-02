@@ -9,8 +9,21 @@ import Image from "next/image"
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Video Background */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/Green_Fields_and_Ponds_Video.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Video Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-[1]"></div>
+      
       {/* Professional Enhanced Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-[2]">
         {/* Subtle Dot Grid */}
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:50px_50px] opacity-60"></div>
         
@@ -28,7 +41,7 @@ export default function Hero() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-quantum-red/40 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-[10] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
